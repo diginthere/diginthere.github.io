@@ -12,6 +12,10 @@ body {
     line-height: 150%;
 }
 
+.slightly-wider-spacing {
+    line-height: 125%;
+}
+
 .color-digin {
     color: #6e8bffff;
 }
@@ -111,6 +115,7 @@ input[type="email"] {
 }
 
 .main-image {
+    padding-left: 2vw;
     height: 55vh;
 }
 
@@ -157,7 +162,7 @@ input[type="email"] {
         'platforms platforms platforms platforms platforms platforms'
         'footer footer footer footer footer footer';
     gap: 2em;
-    padding: 1.5vh 10vw 2vh 10vw;
+    padding: 1.5vh 7.5vw 2vh 7.5vw;
 }
 
 .content-platform {
@@ -166,6 +171,6 @@ input[type="email"] {
     padding: 2vh 0 1vh 0;
 }
 
-.grid-container>div {
-    padding: 0em 2em 2em 2em;
+.grid-container>div:not(.section-header) {
+    padding: 0vh 2vw 2vh 2vw;
 }
