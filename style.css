@@ -1,0 +1,171 @@
+@font-face {
+    font-family: urwbookman;
+    src: url(assets/urw-bookman-l.woff);
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vh;
+}
+
+.wider-spacing {
+    line-height: 150%;
+}
+
+.color-digin {
+    color: #6e8bffff;
+}
+
+.fancy-font {
+    font-family: urwbookman;
+}
+
+.small-font {
+    font-size: 50%;
+}
+
+.smallish-font {
+    font-size: 90%;
+}
+
+.large-font {
+    font-size: 150%;
+}
+
+.bold-font {
+    font-weight: bold;
+}
+
+.light-color {
+    color: gray;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.section-header {
+    grid-area: header;
+}
+
+
+.section-main {
+    grid-area: main;
+    text-align: center;
+}
+
+.main-part {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1;
+}
+
+.main-part-description {
+    width: 35vw;
+    padding-top: 5%;
+}
+
+.main-part-image {
+    width: 25vw;
+}
+
+.summary {
+    margin-bottom: 4vh;
+}
+
+.sub-form {
+    display: inline;
+    gap: 1.5vh;
+    margin-top: 2vh;
+}
+
+input[type="email"] {
+    font-size: 60%;
+    border: 0;
+    outline: 0;
+    padding: 1.5vh 2vh;
+    border-radius: 3%;
+    border: 1px solid #8f94a1;
+}
+
+.sub-btn {
+    font-size: 60%;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: #6e8bffff;
+    padding: 1.5vh 2vh;
+    color: white;
+    border-radius: 3%;
+    cursor: pointer;
+}
+
+.main-image {
+    height: 55vh;
+}
+
+
+.prop-img {
+    height: 10vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.prop-section {
+    background-color: lightcyan;
+    width: 20vw;
+}
+
+.section-prop1 {
+    grid-area: prop1;
+}
+
+.section-prop2 {
+    grid-area: prop2;
+}
+
+.section-prop3 {
+    grid-area: prop3;
+}
+
+.section-content-platforms {
+    grid-area: platforms;
+    display: block;
+    margin: auto;
+}
+
+.section-footer {
+    grid-area: footer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'main main main main main main'
+        'prop1 prop1 prop2 prop2 prop3 prop3'
+        'platforms platforms platforms platforms platforms platforms'
+        'footer footer footer footer footer footer';
+    gap: 2em;
+    padding: 1.5vh 10vw 2vh 10vw;
+}
+
+.content-platform {
+    display: block;
+    width: 15vw;
+    padding: 2vh 0 1vh 0;
+}
+
+.grid-container>div {
+    padding: 0em 2em 2em 2em;
+}
