@@ -3,9 +3,82 @@
     src: url(assets/urw-bookman-l.woff);
 }
 
+[class*="col-"] {
+    width: 100%;
+    float: left;
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2vh;
+    padding: 1.5vh 7.5vw 2vh 7.5vw;
+}
+
+
+.color-digin {
+    color: #6e8bffff;
 }
 
 .wider-spacing {
@@ -14,10 +87,6 @@ body {
 
 .slightly-wider-spacing {
     line-height: 125%;
-}
-
-.color-digin {
-    color: #6e8bffff;
 }
 
 .fancy-font {
@@ -57,31 +126,18 @@ body {
 }
 
 
-.section-header {
-    grid-area: header;
+.logo {
+    max-width: 75%;
+    height: auto;
 }
 
-
-.section-main {
-    grid-area: main;
-    text-align: center;
+@media only screen and (min-width: 768px) {
+    .logo {
+        max-width: 33%;
+        padding-bottom: 10vh;
+    }
 }
 
-.main-part {
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-    line-height: 1;
-}
-
-.main-part-description {
-    width: 35vw;
-    padding-top: 5%;
-}
-
-.main-part-image {
-    width: 25vw;
-}
 
 .summary {
     margin-bottom: 4vh;
@@ -89,12 +145,13 @@ body {
 
 .sub-form {
     display: inline;
-    gap: 1.5vh;
     margin-top: 2vh;
+    gap: 1.5vh;
 }
 
 input[type="email"] {
-    font-size: 60%;
+    width: 50%;
+    font-size: 1.5vh;
     border: 0;
     outline: 0;
     padding: 1.5vh 2vh;
@@ -103,7 +160,8 @@ input[type="email"] {
 }
 
 .sub-btn {
-    font-size: 60%;
+    width: fit-content;
+    font-size: 1.5vh;
     border: none;
     outline: none;
     background: transparent;
@@ -114,63 +172,60 @@ input[type="email"] {
     cursor: pointer;
 }
 
-.main-image {
-    padding-left: 2vw;
-    height: 55vh;
+
+.main-img {
+    padding: 7.5vh 0 3vh 0;
+    max-width: 60%;
+    height: auto;
 }
 
+@media only screen and (min-width: 768px) {
+    .main-img {
+        padding: 0;
+    }
+}
+
+
+.prop {
+    display: block;
+    padding: 2vh 10% 2vh 10%;
+    background-color: lightcyan;
+    border-radius: 25px;
+    border: 2vh solid rgba(255, 255, 255, 1);
+}
+
+@media only screen and (min-width: 768px) {
+    .prop {
+        padding: 2vh 2vw 2vh 2vw;
+    }
+}
+
+.props {
+    padding-bottom: 3vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .props {
+        display: flex;
+        padding-top: 5vh;
+        padding-bottom: 10vh;
+    }
+}
 
 .prop-img {
-    height: 10vh;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    max-height: 10vh;
+    opacity: .6;
 }
 
-.prop-section {
-    background-color: lightcyan;
-    width: 20vw;
-}
-
-.section-prop1 {
-    grid-area: prop1;
-}
-
-.section-prop2 {
-    grid-area: prop2;
-}
-
-.section-prop3 {
-    grid-area: prop3;
-}
-
-.section-content-platforms {
-    grid-area: platforms;
-    display: block;
-    margin: auto;
-}
-
-.section-footer {
-    grid-area: footer;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-areas:
-        'header header header header header header'
-        'main main main main main main'
-        'prop1 prop1 prop2 prop2 prop3 prop3'
-        'platforms platforms platforms platforms platforms platforms'
-        'footer footer footer footer footer footer';
-    gap: 2em;
-    padding: 1.5vh 7.5vw 2vh 7.5vw;
-}
 
 .content-platform {
-    display: block;
-    width: 15vw;
-    padding: 2vh 0 1vh 0;
+    max-width: 40%;
+    height: auto;
 }
 
-.grid-container>div:not(.section-header) {
-    padding: 0vh 2vw 2vh 2vw;
+@media only screen and (min-width: 768px) {
+    .content-platform {
+        max-width: 50%;
+        padding: 2vh 0 2vh 0;
+    }
 }
