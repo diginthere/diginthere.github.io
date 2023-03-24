@@ -45,10 +45,13 @@
         Give out perks to motivate and reward the most active members of your audience. Let us handle everything
         automatically and watch your content getting attention of a more focused kind.
       </p>
-      <div class="sub-form large-font">
-        <input type="email" placeholder="Your Email" />
-        <button class="sub-btn">I'm in!</button>
+      <div id="form" class="sub-form large-font">
+        <form action="https://publisher-onboarding-381514-yy55djdpbq-uc.a.run.app/signup" method="post">
+          <input id="email" name="email" type="email" placeholder="Your Email" />
+          <button id="signup" class="sub-btn" type="submit">Join Waitlist</button>
+        </form>
       </div>
+      <div id="message" style="display:none;"></div>
     </div>
 
     <div class="col-5 text-center">
@@ -115,6 +118,18 @@
   </div>
 
 
+  <script>
+    function emailValid(email) {
+      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+    }
+    document.getElementById("signup").addEventListener("click", function (event) {
+      if (emailValid(document.getElementById("email").value)) {
+        document.getElementById("form").style.display = "none";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").innerHTML = "Excellent, we'll be in touch for the demo soon.";
+      }
+    });
+  </script>
 </body>
 
 </html>
