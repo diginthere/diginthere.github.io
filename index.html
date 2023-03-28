@@ -45,9 +45,11 @@
         Give out perks to motivate and reward the most active members of your audience. Let us handle everything
         automatically and watch your content getting attention of a more focused kind.
       </p>
-      <div id="form" class="sub-form large-font">
+      <button id="btn-waitlist" class="sub-btn">Join Waitlist</button>
+      <div id="sub-form" class="sub-form large-font">
         <form action="https://publisher-onboarding-381514-yy55djdpbq-uc.a.run.app/signup" method="post">
-          <input id="email" name="email" type="email" placeholder="Your Email" />
+          <input id="email" name="email" type="email" placeholder="Your Email" required />
+          <input id="name" name="name" placeholder="Your Name" />
           <button id="signup" class="sub-btn" type="submit">Join Waitlist</button>
         </form>
       </div>
@@ -119,12 +121,16 @@
 
 
   <script>
+    document.getElementById("btn-waitlist").addEventListener("click", function (event) {
+      document.getElementById("btn-waitlist").style.display = "none";
+      document.getElementById("sub-form").style.display = "inline";
+    });
     function emailValid(email) {
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     }
     document.getElementById("signup").addEventListener("click", function (event) {
       if (emailValid(document.getElementById("email").value)) {
-        document.getElementById("form").style.display = "none";
+        document.getElementById("sub-form").style.display = "none";
         document.getElementById("message").style.display = "block";
         document.getElementById("message").innerHTML = "Excellent, we'll be in touch soon.";
       }

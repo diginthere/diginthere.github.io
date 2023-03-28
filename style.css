@@ -140,26 +140,29 @@ body {
 
 
 .summary {
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
 .sub-form {
-    display: inline;
+    display: none;
     margin-top: 2vh;
     gap: 1.5vh;
 }
 
-input[type="email"] {
+input {
     width: 50%;
+    display: block;
     font-size: 1.5vh;
     border: 0;
     outline: 0;
     padding: 1.5vh 2vh;
+    margin-bottom: .75vh;
     border-radius: 3%;
     border: 1px solid #8f94a1;
 }
 
 .sub-btn {
+    display: block;
     width: fit-content;
     font-size: 1.5vh;
     border: none;
