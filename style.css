@@ -171,8 +171,13 @@ input {
     background-color: #6e8bffff;
     padding: 1.5vh 2vh;
     color: white;
-    border-radius: 3%;
+    border-radius: 5px;
     cursor: pointer;
+    transition: .25s;
+}
+
+.sub-btn:hover {
+    background-color: #586eccff;
 }
 
 
