@@ -1,159 +1,182 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQB3EBQHKY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-FQB3EBQHKY');
-  </script>
-  <title>Dig In There -- An Audience Engagement Tool</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-  <link rel="stylesheet" href="style.css">
-  <link rel="canonical" href="https://diginthere.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A Practical New Tool for Deepening Audience Engagement on Your Content. Give out perks to motivate and reward the most engaged members of your audience.">
-  <meta name="keywords" content="Content creator, perks, benefits, audience">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Dig In There -- An Audience Engagement Tool">
-  <meta property="og:description" content="A Practical New Tool for Deepening Audience Engagement on Your Content. Give out perks to motivate and reward the most engaged members of your audience.">
-  <meta property="og:image" content="https://diginthere.com/assets/digin.svg">
-  <meta property="og:url" content="https://diginthere.com">
-  <meta property="og:type" content="website">
-</head>
-
-<body>
-
-
-  <div class="row">
-
-    <div class="col-1">&nbsp;</div>
-
-    <div class="col-10">
-      <img src="assets/digin-full.svg" class="logo" />
-    </div>
-
-    <div class="col-1">&nbsp;</div>
-
-  </div>
-
-
-  <div class="row">
-
-    <div class="col-2">&nbsp;</div>
-
-    <div class="col-5">
-      <div class="fancy-font bold-font large-font slightly-wider-spacing">
-        A Practical New Tool for Deepening Audience Engagement on Your Content
-      </div>
-      <p class="light-color wider-spacing summary">
-        Give out perks to motivate and reward the most engaged members of your audience.
-        Let us handle everything automatically and watch your content getting attention of a more focused kind.
-      </p>
-      <button id="btn-waitlist" class="sub-btn">Join Waitlist</button>
-      <div id="sub-form" class="sub-form large-font">
-        <form action="https://publisher-onboarding-381514-yy55djdpbq-uc.a.run.app/signup" method="post">
-          <input id="email" name="email" type="email" placeholder="Your Email" required />
-          <input id="name" name="name" placeholder="Your Name" />
-          <button id="signup" class="sub-btn" type="submit">Join Waitlist</button>
-        </form>
-      </div>
-      <div id="message" style="display:none;"></div>
-    </div>
-
-    <div class="col-5 text-center">
-      <img src="assets/image.svg" class="main-img" />
-    </div>
-
-  </div>
-
-
-  <div class="row props">
-
-    <div class="col-4 prop">
-      <img src="assets/prop-free.svg" class="prop-img" />
-      <div class="fancy-font bold-font">Free*</div>
-      <p class="light-color wider-spacing smallish-font">
-        *A rare happy case of an asterisk &#128522;
-        <br>
-        We are planning to roll out a robust revenue-sharing program with participating publishers.
-      </p>
-    </div>
-
-    <div class="col-4 prop">
-      <img src="assets/prop-adoption.svg" class="prop-img" />
-      <div class="fancy-font bold-font">Easy-to-Adopt</div>
-      <p class="light-color wider-spacing smallish-font">
-      </p>
-      <p class="light-color wider-spacing smallish-font">
-        You and your audience all stay on the platform you're already a creator on.
-        No need to change anything in your creative process.
-      </p>
-    </div>
-
-    <div class="col-4 prop">
-      <img src="assets/prop-automatic.svg" class="prop-img" />
-      <div class="fancy-font bold-font">Automatic Perk Management</div>
-      <p class="light-color wider-spacing smallish-font">
-        Let us handle the boring stuff.
-        We take care of the nitty-gritty of administration, you keep on creating your
-        content.
-      </p>
-    </div>
-
-  </div>
-
-
-  <div class="row">
-    <div class="col-4">&nbsp;</div>
-    <div class="col-4 text-center">
-      <img src="assets/brands/youtube.svg" class="content-platform" />
-    </div>
-    <div class="col-4">&nbsp;</div>
-  </div>
-
-  <div class="row">
-    <div class="col-4">&nbsp;</div>
-    <div class="col-4 text-center">
-      <img src="assets/brands/substack.svg" class="content-platform" />
-    </div>
-    <div class="col-4">&nbsp;</div>
-  </div>
-
-  <div class="row">
-    <div class="col-4">&nbsp;</div>
-    <div class="col-4 text-center">
-      <img src="assets/brands/wordpress.svg" class="content-platform" />
-    </div>
-    <div class="col-4">&nbsp;</div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-12 small-font text-right light-color">&copy; 2023, Dig In There</div>
-  </div>
-
-
-  <script>
-    document.getElementById("btn-waitlist").addEventListener("click", function (event) {
-      document.getElementById("btn-waitlist").style.display = "none";
-      document.getElementById("sub-form").style.display = "inline";
-    });
-    function emailValid(email) {
-      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-    }
-    document.getElementById("signup").addEventListener("click", function (event) {
-      if (emailValid(document.getElementById("email").value)) {
-        document.getElementById("sub-form").style.display = "none";
-        document.getElementById("message").style.display = "block";
-        document.getElementById("message").innerHTML = "Excellent, we'll be in touch soon.";
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FQB3EBQHKY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    });
-  </script>
-</body>
+      gtag("js", new Date());
 
+      gtag("config", "G-FQB3EBQHKY");
+    </script>
+    <title>Dig In There -- An Audience Engagement Tool</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://diginthere.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Practical New Tool for Deepening Audience Engagement on Your Content. Give out perks to motivate and reward the most engaged members of your audience."
+    />
+    <meta
+      name="keywords"
+      content="Content creator, perks, benefits, audience"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="Dig In There - The Audience Engagement Tool"
+    />
+    <meta
+      property="og:description"
+      content="A Practical New Tool for Deepening Audience Engagement on Your Content. Give out perks to motivate and reward the most engaged members of your audience."
+    />
+    <meta
+      property="og:image"
+      content="https://diginthere.com/assets/digin.svg"
+    />
+    <meta property="og:url" content="https://diginthere.com" />
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col-1">&nbsp;</div>
+
+      <div class="col-10">
+        <img src="assets/digin-full.svg" class="logo" />
+      </div>
+
+      <div class="col-1">&nbsp;</div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">&nbsp;</div>
+
+      <div class="col-5">
+        <div class="fancy-font bold-font large-font slightly-wider-spacing">
+          A Practical New Tool for Deepening Audience Engagement on Your Content
+        </div>
+        <p class="light-color wider-spacing summary">
+          Give out perks to motivate and reward the most engaged members of your
+          audience. Let us handle everything automatically and watch your
+          content getting attention of a more focused kind.
+        </p>
+        <button id="btn-waitlist" class="sub-btn">Join Waitlist</button>
+        <div id="sub-form" class="sub-form large-font">
+          <form
+            action="https://publisher-onboarding-381514-yy55djdpbq-uc.a.run.app/signup"
+            method="post"
+          >
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Your Email"
+              required
+            />
+            <input id="name" name="name" placeholder="Your Name" required />
+            <button id="signup" class="sub-btn" type="submit">
+              Join Waitlist
+            </button>
+          </form>
+        </div>
+        <div id="message" style="display: none"></div>
+      </div>
+
+      <div class="col-5 text-center">
+        <img src="assets/image.svg" class="main-img" />
+      </div>
+    </div>
+
+    <div class="row props">
+      <div class="col-4 prop">
+        <img src="assets/prop-free.svg" class="prop-img" />
+        <div class="fancy-font bold-font">Free*</div>
+        <p class="light-color wider-spacing smallish-font">
+          *A rare happy case of an asterisk &#128522;
+          <br />
+          We are planning to roll out a robust revenue-sharing program with
+          participating publishers.
+        </p>
+      </div>
+
+      <div class="col-4 prop">
+        <img src="assets/prop-adoption.svg" class="prop-img" />
+        <div class="fancy-font bold-font">Easy-to-Adopt</div>
+        <p class="light-color wider-spacing smallish-font"></p>
+        <p class="light-color wider-spacing smallish-font">
+          You and your audience all stay on the platform you're already a
+          creator on. No need to change anything in your creative process.
+        </p>
+      </div>
+
+      <div class="col-4 prop">
+        <img src="assets/prop-automatic.svg" class="prop-img" />
+        <div class="fancy-font bold-font">Automatic Perk Management</div>
+        <p class="light-color wider-spacing smallish-font">
+          Let us handle the boring stuff. We take care of the nitty-gritty of
+          administration, you keep on creating your content.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">&nbsp;</div>
+      <div class="col-4 text-center">
+        <img src="assets/brands/youtube.svg" class="content-platform" />
+      </div>
+      <div class="col-4">&nbsp;</div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">&nbsp;</div>
+      <div class="col-4 text-center">
+        <img src="assets/brands/substack.svg" class="content-platform" />
+      </div>
+      <div class="col-4">&nbsp;</div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">&nbsp;</div>
+      <div class="col-4 text-center">
+        <img src="assets/brands/wordpress.svg" class="content-platform" />
+      </div>
+      <div class="col-4">&nbsp;</div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 small-font text-right light-color">
+        &copy; 2023, Dig In There
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("btn-waitlist")
+        .addEventListener("click", function (event) {
+          document.getElementById("btn-waitlist").style.display = "none";
+          document.getElementById("sub-form").style.display = "inline";
+        });
+      function emailValid(email) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+      }
+      document
+        .getElementById("signup")
+        .addEventListener("click", function (event) {
+          if (emailValid(document.getElementById("email").value)) {
+            document.getElementById("sub-form").style.display = "none";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("message").innerHTML =
+              "Excellent, we'll be in touch soon.";
+          }
+        });
+    </script>
+  </body>
 </html>
