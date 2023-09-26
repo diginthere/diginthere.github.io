@@ -176,6 +176,22 @@ input {
   background-color: #586eccff;
 }
 
+.button-link {
+  display: inline-block;
+  padding: 1.5vh 2vh;
+  background-color: #846effff;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #586eccff;
+}
+
 .main-img {
   padding: 7.5vh 0 3vh 0;
   max-width: 60%;

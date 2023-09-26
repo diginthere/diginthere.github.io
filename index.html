@@ -68,26 +68,9 @@
           audience. Let us handle everything automatically and watch your
           content getting attention of a more focused kind.
         </p>
-        <button id="btn-waitlist" class="sub-btn">Join Waitlist</button>
-        <div id="sub-form" class="sub-form large-font">
-          <form
-            action="https://publisher-onboarding-381514-yy55djdpbq-uc.a.run.app/signup"
-            method="post"
-          >
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Your Email"
-              required
-            />
-            <input id="name" name="name" placeholder="Your Name" required />
-            <button id="signup" class="sub-btn" type="submit">
-              Join Waitlist
-            </button>
-          </form>
-        </div>
-        <div id="message" style="display: none"></div>
+        <a href="https://discord.gg/YBrJy8tm" class="button-link"
+          >Join Wait Group on Discord</a
+        >
       </div>
 
       <div class="col-5 text-center">
@@ -156,27 +139,5 @@
         &copy; 2023, Dig In There
       </div>
     </div>
-
-    <script>
-      document
-        .getElementById("btn-waitlist")
-        .addEventListener("click", function (event) {
-          document.getElementById("btn-waitlist").style.display = "none";
-          document.getElementById("sub-form").style.display = "inline";
-        });
-      function emailValid(email) {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
-      }
-      document
-        .getElementById("signup")
-        .addEventListener("click", function (event) {
-          if (emailValid(document.getElementById("email").value)) {
-            document.getElementById("sub-form").style.display = "none";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").innerHTML =
-              "Excellent, we'll be in touch soon.";
-          }
-        });
-    </script>
   </body>
 </html>
