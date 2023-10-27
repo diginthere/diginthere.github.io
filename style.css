@@ -71,8 +71,8 @@
 
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 2vh;
-  padding: 1.5vh 7.5vw 2vh 7.5vw;
+  font-size: 1.25vw;
+  padding: 1.5vh 5vw 2vh 5vw;
 }
 
 .color-digin {
@@ -148,10 +148,10 @@ body {
 input {
   width: 50%;
   display: block;
-  font-size: 1.5vh;
+  font-size: 1vw;
   border: 0;
   outline: 0;
-  padding: 1.5vh 2vh;
+  padding: 1.5vh 1vw;
   margin-bottom: 0.75vh;
   border-radius: 5px;
   border: 1px solid #8f94a1;
@@ -160,12 +160,12 @@ input {
 .sub-btn {
   display: block;
   width: fit-content;
-  font-size: 1.5vh;
+  font-size: 1vw;
   border: none;
   outline: none;
   background: transparent;
   background-color: #846effff;
-  padding: 1.5vh 2vh;
+  padding: 1.5vh 1vw;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -178,7 +178,7 @@ input {
 
 .button-link {
   display: inline-block;
-  padding: 1.5vh 2vh;
+  padding: 1.5vh 1vw;
   background-color: #846effff;
   color: white;
   text-decoration: none;
@@ -233,6 +233,7 @@ input {
 .prop-img {
   max-height: 10vh;
   opacity: 0.6;
+  margin-bottom: 1vh;
 }
 
 .content-platform {
