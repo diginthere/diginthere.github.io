@@ -1,6 +1,7 @@
 @font-face {
-  font-family: urwbookman;
-  src: url(assets/urw-bookman-l.woff);
+  font-family: sourcesans;
+  src: url(assets/SourceSans3-VariableFont_wght.ttf)
+    format("truetype-variations");
 }
 
 [class*="col-"] {
@@ -70,8 +71,10 @@
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1.25vw;
+  font-family: sourcesans, "Arial Narrow", Arial, sans-serif;
+  color: #333333;
+  font-size: 1.5vw;
+  font-weight: normal;
   padding: 1.5vh 5vw 2vh 5vw;
 }
 
@@ -88,7 +91,7 @@ body {
 }
 
 .fancy-font {
-  font-family: urwbookman;
+  font-family: sourcesans;
 }
 
 .small-font {
