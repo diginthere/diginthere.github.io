@@ -1,252 +1,277 @@
 @font-face {
-  font-family: sourcesans;
-  src: url(assets/SourceSans3-VariableFont_wght.ttf)
-    format("truetype-variations");
+    font-family: sourcesans;
+    src: url(assets/SourceSans3-VariableFont_wght.ttf)
+        format("truetype-variations");
 }
 
 [class*="col-"] {
-  width: 100%;
-  float: left;
-  padding: 0;
+    width: 100%;
+    float: left;
+    padding: 0;
 }
 
 @media only screen and (min-width: 1100px) {
-  .col-1 {
-    width: 8.33%;
-  }
+    .col-1 {
+        width: 8.33%;
+    }
 
-  .col-2 {
-    width: 16.66%;
-  }
+    .col-2 {
+        width: 16.66%;
+    }
 
-  .col-3 {
-    width: 25%;
-  }
+    .col-3 {
+        width: 25%;
+    }
 
-  .col-4 {
-    width: 33.33%;
-  }
+    .col-4 {
+        width: 33.33%;
+    }
 
-  .col-5 {
-    width: 41.66%;
-  }
+    .col-5 {
+        width: 41.66%;
+    }
 
-  .col-6 {
-    width: 50%;
-  }
+    .col-6 {
+        width: 50%;
+    }
 
-  .col-7 {
-    width: 58.33%;
-  }
+    .col-7 {
+        width: 58.33%;
+    }
 
-  .col-8 {
-    width: 66.66%;
-  }
+    .col-8 {
+        width: 66.66%;
+    }
 
-  .col-9 {
-    width: 75%;
-  }
+    .col-9 {
+        width: 75%;
+    }
 
-  .col-10 {
-    width: 83.33%;
-  }
+    .col-10 {
+        width: 83.33%;
+    }
 
-  .col-11 {
-    width: 91.66%;
-  }
+    .col-11 {
+        width: 91.66%;
+    }
 
-  .col-12 {
-    width: 100%;
-  }
+    .col-12 {
+        width: 100%;
+    }
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 body {
-  font-family: sourcesans, "Arial Narrow", Arial, sans-serif;
-  color: #333333;
-  font-size: 1.5vw;
-  font-weight: normal;
-  padding: 1.5vh 5vw 2vh 5vw;
+    font-family: sourcesans, "Arial Narrow", Arial, sans-serif;
+    color: #333333;
+    font-size: 3vw;
+    font-weight: normal;
+    padding: 1.5vh 5vw 2vh 5vw;
+}
+
+.main-part {
+    margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 1100px) {
+    body {
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (max-width: 1099px) {
+    .when-large {
+        display: none;
+    }
 }
 
 .color-digin {
-  color: #846effff;
+    color: #846effff;
 }
 
 .wider-spacing {
-  line-height: 150%;
+    line-height: 150%;
 }
 
 .slightly-wider-spacing {
-  line-height: 125%;
+    line-height: 125%;
 }
 
 .fancy-font {
-  font-family: sourcesans;
+    font-family: sourcesans;
 }
 
 .small-font {
-  font-size: 50%;
+    font-size: 50%;
 }
 
 .smallish-font {
-  font-size: 90%;
+    font-size: 90%;
 }
 
 .large-font {
-  font-size: 150%;
+    font-size: 150%;
 }
 
 .bold-font {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .light-color {
-  color: gray;
+    color: gray;
 }
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 .logo {
-  max-width: 75%;
-  height: auto;
+    max-width: 75%;
+    height: auto;
 }
 
 @media only screen and (min-width: 1100px) {
-  .logo {
-    max-width: 33%;
-    padding-bottom: 10vh;
-  }
+    .logo {
+        max-width: 33%;
+        padding-bottom: 10vh;
+    }
 }
 
 .summary {
-  margin-bottom: 3vh;
+    margin-bottom: 3vh;
 }
 
 .sub-form {
-  display: none;
-  margin-top: 2vh;
-  gap: 1.5vh;
+    display: none;
+    margin-top: 2vh;
+    gap: 1.5vh;
 }
 
 input {
-  width: 50%;
-  display: block;
-  font-size: 1vw;
-  border: 0;
-  outline: 0;
-  padding: 1.5vh 1vw;
-  margin-bottom: 0.75vh;
-  border-radius: 5px;
-  border: 1px solid #8f94a1;
+    width: 50%;
+    display: block;
+    font-size: 1vw;
+    border: 0;
+    outline: 0;
+    padding: 1.5vh 1vw;
+    margin-bottom: 0.75vh;
+    border-radius: 5px;
+    border: 1px solid #8f94a1;
 }
 
 .sub-btn {
-  display: block;
-  width: fit-content;
-  font-size: 1vw;
-  border: none;
-  outline: none;
-  background: transparent;
-  background-color: #846effff;
-  padding: 1.5vh 1vw;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.25s;
+    display: block;
+    width: fit-content;
+    font-size: 1vw;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: #846effff;
+    padding: 1.5vh 1vw;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.25s;
 }
 
 .sub-btn:hover {
-  background-color: #586eccff;
+    background-color: #586eccff;
 }
 
 .button-link {
-  display: inline-block;
-  padding: 1.5vh 1vw;
-  background-color: #846effff;
-  color: white;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 1.5vh 1vw;
+    background-color: #846effff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .button-link:hover {
-  background-color: #586eccff;
+    background-color: #586eccff;
 }
 
 .main-img {
-  padding: 7.5vh 0 3vh 0;
-  max-width: 60%;
-  height: auto;
+    padding: 7.5vh 0 3vh 0;
+    max-width: 60%;
+    height: auto;
 }
 
 @media only screen and (min-width: 1100px) {
-  .main-img {
-    padding: 0;
-  }
+    .main-img {
+        padding: 0;
+    }
 }
 
 .prop {
-  display: block;
-  padding: 2vh 10% 2vh 10%;
-  background-color: lightcyan;
-  border-radius: 25px;
-  border: 2vh solid rgba(255, 255, 255, 1);
+    display: block;
+    padding: 1.25em;
+    background-color: #dee1ff;
+    border-radius: 25px;
+    border: 0.3em solid #333333;
+    margin: 0.5em;
 }
 
 @media only screen and (min-width: 1100px) {
-  .prop {
-    padding: 2vh 2vw 2vh 2vw;
-  }
+    .prop {
+        padding: 1.25em;
+    }
 }
 
 .props {
-  padding-bottom: 3vh;
+    padding-bottom: 1.25em;
 }
 
 @media only screen and (min-width: 1100px) {
-  .props {
-    display: flex;
-    padding-top: 5vh;
-    padding-bottom: 10vh;
-  }
+    .props {
+        display: flex;
+        padding-top: 5vh;
+        padding-bottom: 10vh;
+    }
+}
+.prop-feature-font {
+    text-transform: uppercase;
+    color: black;
+}
+
+.prop-feature-descr-font {
+    color: #333;
 }
 
 .prop-img {
-  max-height: 10vh;
-  opacity: 0.6;
-  margin-bottom: 1vh;
+    max-height: 10vh;
+    opacity: 0.8;
+    margin-bottom: 1vh;
 }
 
 .content-platform {
-  max-width: 40%;
-  height: auto;
+    max-width: 40%;
+    height: auto;
 }
 
 @media only screen and (min-width: 1100px) {
-  .content-platform {
-    max-width: 50%;
-    padding: 2vh 0 2vh 0;
-  }
+    .content-platform {
+        max-width: 50%;
+        padding: 2vh 0 2vh 0;
+    }
 }
