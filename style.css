@@ -206,9 +206,18 @@ input {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .button-link:hover {
     background-color: #586eccff;
+}
+
+@media only screen and (max-width: 1099px) {
+    .button-link {
+        text-align: center;
+        display: block;
+        width: max-content;
+        margin: auto;
+        padding: 0.5em;
+    }
 }
 
 .main-img {
@@ -224,7 +233,7 @@ input {
 }
 
 .benefits {
-    margin-top: 2em;
+    /* margin-top: 2em; */
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
