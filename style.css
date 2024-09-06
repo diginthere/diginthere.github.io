@@ -223,6 +223,13 @@ input {
     }
 }
 
+.benefits {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
 .prop {
     display: block;
     padding: 1.25em;
