@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: sourcesans;
     src: url(assets/SourceSans3-VariableFont_wght.ttf)
