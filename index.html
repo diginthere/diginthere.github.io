@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script
@@ -16,8 +16,7 @@
             gtag("config", "G-FQB3EBQHKY");
         </script>
         <title>DigInThere: the Audience Engagement Tool (Coming Soon)</title>
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link rel="canonical" href="https://diginthere.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -26,7 +25,7 @@
         />
         <meta
             name="keywords"
-            content="Content creator, perks, benefits, audience"
+            content="Content creator, attention, engagement, rewards, perks, benefits, giveaways, audience"
         />
         <meta name="robots" content="index, follow" />
         <meta
@@ -43,166 +42,706 @@
         />
         <meta property="og:url" content="https://diginthere.com" />
         <meta property="og:type" content="website" />
-    </head>
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-color: #846eff;
+                --secondary-color: #333;
+                --background-color: #f9f9f9;
+                --accent-color: #ffca28;
+                --font-family: "Inter", sans-serif;
+                --gap-size: 30px;
+                --section-spacing-mobile: 40px;
+                --section-spacing-tablet: 60px;
+                --section-spacing-desktop: 80px;
+            }
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: var(--font-family);
+                background: var(--background-color);
+                color: var(--secondary-color);
+                line-height: 1.6;
+            }
+            .container {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+            }
+            header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px 0;
+                margin-bottom: var(--section-spacing-mobile);
+            }
+            .logo {
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+            .tagline {
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 20px 0 40px;
+                text-align: center;
+            }
 
-    <body>
-        <div class="row">
-            <div class="col-2">&nbsp;</div>
+            .tagline-answer {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.5s ease-out forwards;
+                animation-delay: 0.85s;
+            }
 
-            <div class="col-8">
-                <img src="assets/digin-full.svg" class="logo" />
-            </div>
+            .page-content {
+                display: flex;
+                flex-direction: column;
+                opacity: 0;
+                animation: fadeIn 0.75s ease-out forwards;
+                animation-delay: 2.5s;
+            }
 
-            <div class="col-2">&nbsp;</div>
-        </div>
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-        <div class="row main-part">
-            <div class="col-2">&nbsp;</div>
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
 
-            <div class="col-5">
-                <div
-                    class="fancy-font bold-font large-font slightly-wider-spacing"
-                >
-                    Want to earn readers' attention? Reward them for it.
-                </div>
-                <p class="light-color wider-spacing summary">
-                    Introducing a gameshow-like quiz for deeper audience
-                    engagement to motivate your audiences to engage more deeply
-                    with news content. DigInThere makes it easy for publishers
-                    to reward the most loyal of their audience for their focused
-                    attention by giving them the opportunity to earn "perks"
-                    like merch, event tickets, or whatever else fits your
-                    newsroom.
-                </p>
-                <!-- <p class="light-color wider-spacing summary">
-                    <img src="assets/prop-motivate.svg" class="img-launch" />
-                    Public launch on 4/3/2025
-                </p> -->
-                <p class="wider-spacing summary">
-                    Interested to learn how this could work for you?
-                    <a href="#contact" class="button-link margin-top"
-                        >Let's TALK</a
-                    >
-                    <a
-                        href="https://diginthere-demo.com"
-                        class="button-demo-link margin-top margin-left"
-                    >
-                        Try our live DEMO
-                    </a>
-                </p>
-            </div>
+            .underline-hand {
+                position: relative;
+                display: inline-block;
+            }
 
-            <div class="col-5 text-center when-large">
-                <img src="assets/image.svg" class="main-img" />
-            </div>
-        </div>
+            .underline-animated {
+                position: absolute;
+                left: 0;
+                bottom: -0.3em;
+                width: 100%;
+                height: 0.6em;
+                pointer-events: none;
+            }
 
-        <div class="row benefits">What are the benefits of DigInThere?</div>
+            .underline-animated path {
+                fill: none;
+                stroke: #846eff;
+                stroke-width: 5;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 150;
+                stroke-dashoffset: 150;
+                animation: draw-underline 0.5s ease-out forwards;
+                animation-delay: 1.8s;
+            }
 
-        <div class="row props">
-            <div class="col-4 prop">
-                <img src="assets/prop-motivate.svg" class="prop-img" />
-                <div class="fancy-font bold-font prop-feature-font">
-                    Motivate your Audience
-                </div>
-                <p
-                    class="light-color wider-spacing smallish-font prop-feature-descr-font"
-                >
-                    DigInThere incentivizes your audience toward deeper content
-                    consumption by rewarding the most engaged of them.
-                </p>
-            </div>
+            @keyframes draw-underline {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
 
-            <div class="col-4 prop">
-                <img src="assets/prop-verified.svg" class="prop-img" />
-                <div class="fancy-font bold-font prop-feature-font">
-                    Verified Engagement
-                </div>
-                <p
-                    class="light-color wider-spacing smallish-font prop-feature-descr-font"
-                >
-                    DigInThere gives you assurance on the depth of audience
-                    engagement.
-                </p>
-            </div>
+            /* Hero section styling - updated to make summary and image side by side */
+            .hero-section {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap-size);
+                margin-bottom: var(--section-spacing-mobile);
+            }
 
-            <div class="col-4 prop">
-                <img src="assets/prop-automated.svg" class="prop-img" />
-                <div class="fancy-font bold-font prop-feature-font">
-                    Automated Processes
-                </div>
-                <p
-                    class="light-color wider-spacing smallish-font prop-feature-descr-font"
-                >
-                    DigInThere handles the boring stuff for you, so you can
-                    focus on the actual work
-                </p>
-            </div>
+            .hero-content,
+            .hero-image {
+                flex: 1 1 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
 
-            <div class="col-4 prop">
-                <img src="assets/prop-adoption.svg" class="prop-img" />
-                <div class="fancy-font bold-font prop-feature-font">
-                    Easy to Adopt & Customize
-                </div>
-                <p
-                    class="light-color wider-spacing smallish-font prop-feature-descr-font"
-                >
-                    It's easy to adapt to your outlet's branding and styles.
-                    Quizzes can be embedded seamlessly into your article pages,
-                    and there's a customizable quiz page.
-                </p>
-            </div>
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+            }
 
-            <div class="col-4 prop">
-                <img src="assets/prop-free.svg" class="prop-img" />
-                <div class="fancy-font bold-font prop-feature-font">Free</div>
-                <p
-                    class="light-color wider-spacing smallish-font prop-feature-descr-font"
-                >
-                    DigInThere is free to use, and requires minimal effort to
-                    get started.
-                </p>
-            </div>
-        </div>
+            .hero-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-        <div id="contact"></div>
-        <div data-tf-live="01J73TFJS8HA9YNNZHNZPK5Y97"></div>
-        <script src="//embed.typeform.com/next/embed.js"></script>
+            .summary {
+                font-size: 1.25rem;
+                text-align: left;
+                padding: 20px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                border-left: 5px solid var(--primary-color);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
 
-        <a
-            href="https://rjionline.org/"
-            style="text-decoration: none; color: inherit"
-            target="_blank"
-        >
-            <div
-                class="row text-center"
-                style="
-                    margin-top: 5em;
+            .summary:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .explainer-image {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+                object-fit: contain;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            /* Countdown section */
+            .countdown {
+                text-align: center;
+                font-size: 2.25rem;
+                margin-bottom: var(--section-spacing-mobile);
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                border-top: 5px solid var(--primary-color);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            #countdown span {
+                font-weight: 700;
+                color: var(--primary-color);
+            }
+
+            /* Default: single-item per row */
+            .benefits {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap-size);
+                margin-bottom: var(--section-spacing-mobile);
+            }
+            .benefit {
+                width: 100%;
+                background: #fff;
+                border-radius: 12px;
+                padding: 20px;
+                text-align: center;
+                transition: all 0.2s ease-in-out;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            }
+            .benefit:hover {
+                background: #fff;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            }
+            .benefit-icon {
+                width: auto;
+                height: 2.5em;
+                margin-bottom: 15px;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+            .benefit h3 {
+                font-size: 1.125rem;
+                margin-bottom: 10px;
+            }
+
+            #launch-date {
+                font-size: 1.25rem;
+                font-weight: 300 !important;
+                color: #333 !important;
+            }
+
+            .cta {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap-size);
+                margin-bottom: var(--section-spacing-mobile);
+            }
+            .action {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                padding: 25px;
+                text-align: center;
+                flex: 1;
+            }
+            .action p {
+                margin-bottom: 15px;
+                font-weight: 600;
+            }
+            .action input[type="email"] {
+                padding: 12px;
+                width: 80%;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                margin-bottom: 15px;
+            }
+            .btn {
+                display: inline-block;
+                background: var(--primary-color);
+                color: #fff;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                cursor: pointer;
+                font-size: 1rem; /* Set explicit font size */
+                line-height: 1.5; /* Set explicit line height */
+                box-sizing: border-box; /* Ensure padding is included in size */
+                min-width: 120px; /* Set minimum width */
+                text-align: center; /* Center text */
+            }
+            .footer {
+                text-align: center;
+                padding: 30px 0;
+                margin-top: 20px;
+                font-size: 1.25em;
+                color: #666;
+            }
+
+            .footer a {
+                text-decoration: none;
+                color: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            .footer img {
+                height: 2.5em;
+                width: auto;
+                user-select: none;
+                -webkit-user-drag: none;
+            }
+
+            .footer-email {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5em;
+                margin-bottom: 1em;
+            }
+
+            /* Mid-size: two benefits per row */
+            @media (min-width: 420px) and (max-width: 720px) {
+                header {
+                    margin-bottom: var(--section-spacing-tablet);
+                }
+                .hero-section {
+                    margin-bottom: var(--section-spacing-tablet);
+                }
+                .benefits {
+                    margin-bottom: var(--section-spacing-tablet);
+                }
+                .countdown {
+                    margin-bottom: var(--section-spacing-tablet);
+                }
+                .cta {
+                    margin-bottom: var(--section-spacing-tablet);
+                }
+                .logo {
+                    max-width: 250px;
+                }
+
+                /* Position content strategically for tablet fold */
+                .hero-section {
+                    min-height: auto;
+                }
+                .benefits {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+                .benefit {
+                    flex: 1 1 calc(50% - var(--gap-size));
+                }
+                /* Position countdown and CTA just above the fold */
+                .countdown-section {
+                    margin-top: 80px; /* Push it down toward the fold */
+                }
+
+                /* Calculate approximate fold based on tablet height */
+                .first-fold-content {
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 0.33em;
-                "
-            >
-                <img
-                    src="assets/reynolds_journalism_institute_logo.jpeg"
-                    class="rj-logo"
-                    style="width: 1.67em"
-                />
-                <span style="font-size: 0.8em">
-                    Supported by the Reynolds Journalism Institute
-                </span>
-            </div>
-        </a>
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
 
-        <div class="row">
-            <div class="col-12 small-font text-right light-color">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-                DigInThere
-            </div>
+                /* then order its direct children: */
+                .first-fold-content .hero-section {
+                    order: 1;
+                }
+                .first-fold-content .fold-bottom-content {
+                    order: 2; /* wraps your .countdown */
+                }
+                /* finally the siblings of first-fold-content */
+                .page-content .cta {
+                    order: 3;
+                }
+                .first-fold-content .benefits {
+                    order: 4;
+                }
+                .page-content .footer {
+                    order: 5;
+                }
+            }
+
+            /* Large: four benefits per row, header and CTAs in row */
+            @media (min-width: 720px) {
+                header {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    text-align: left;
+                    margin-bottom: 40px;
+                }
+                .hero-section {
+                    flex-direction: row;
+                    align-items: stretch;
+                    min-height: 300px;
+                    margin-bottom: 50px;
+                }
+                .hero-content {
+                    width: 40%;
+                    padding-right: 20px;
+                }
+                .hero-image {
+                    width: 60%;
+                    padding-left: 20px;
+                }
+                .explainer-image {
+                    width: 100%;
+                    height: 100%;
+                    max-height: none;
+                    object-fit: contain;
+                }
+                .summary:last-child {
+                    margin-bottom: 0;
+                }
+
+                /* Position content to make countdown and CTA at the fold */
+                .benefits {
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    margin-bottom: 50px;
+                }
+                .benefit {
+                    flex: 1 1 calc(25% - var(--gap-size));
+                }
+
+                /* Position countdown and CTA at the bottom of the first viewport */
+                .countdown-section {
+                    margin-top: auto;
+                    padding: 35px;
+                    margin-bottom: 30px;
+                }
+                .cta {
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: var(--section-spacing-desktop);
+                }
+                .action {
+                    padding: 30px;
+                }
+                .logo {
+                    max-width: 300px;
+                }
+
+                /* First fold content container */
+                .first-fold-content {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                /* Make countdown stick to bottom of first fold */
+                .fold-bottom-content {
+                    margin-top: auto;
+                }
+
+                /* then order its direct children: */
+                .first-fold-content .hero-section {
+                    order: 1;
+                }
+                .first-fold-content .benefits {
+                    order: 2;
+                }
+                .first-fold-content .fold-bottom-content {
+                    order: 3; /* wraps your .countdown */
+                }
+                /* finally the siblings of first-fold-content */
+                .page-content .cta {
+                    order: 4;
+                }
+                .page-content .footer {
+                    order: 5;
+                }
+            }
+
+            /* Small screens */
+            @media (max-width: 420px) {
+                .logo {
+                    max-width: 200px;
+                }
+
+                /* Strategic placement for mobile fold */
+                .hero-section {
+                    margin-bottom: 30px;
+                }
+
+                /* Position countdown at the natural mobile fold */
+                .countdown-section {
+                    margin-top: 10px;
+                    margin-bottom: 25px;
+                }
+
+                /* Calculate mobile fold */
+                .first-fold-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                /* then order its direct children: */
+                .first-fold-content .hero-section {
+                    order: 1;
+                }
+                .first-fold-content .fold-bottom-content {
+                    order: 2; /* wraps your .countdown */
+                }
+                /* finally the siblings of first-fold-content */
+                .page-content .cta {
+                    order: 3;
+                }
+                .first-fold-content .benefits {
+                    order: 4;
+                }
+                .page-content .footer {
+                    order: 5;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img
+                    src="assets/digin-full.svg"
+                    class="logo"
+                    alt="DigInThere Logo"
+                />
+            </header>
+
+            <section>
+                <h1 class="tagline">
+                    Want to earn readers' attention?
+                    <div class="tagline-answer">
+                        <span class="underline-hand">
+                            Reward
+                            <svg
+                                class="underline-animated"
+                                viewBox="0 0 100 10"
+                                preserveAspectRatio="none"
+                            >
+                                <path
+                                    d="M0 6 C5 2, 8 8, 15 4 C22 0, 25 9, 35 3 C45 -2, 55 8, 65 4 C75 0, 85 7, 92 2 C96 -1, 98 5, 100 3"
+                                />
+                            </svg>
+                        </span>
+                        them for it.
+                    </div>
+                </h1>
+
+                <div class="page-content">
+                    <!-- First fold content wrapper -->
+                    <div class="first-fold-content">
+                        <div class="hero-section">
+                            <div class="hero-content">
+                                <p class="summary">
+                                    <strong>We</strong> power your content with
+                                    rewards
+                                </p>
+                                <p class="summary">
+                                    <strong>Your readers</strong> get an
+                                    engaging, gameshow-like experience
+                                </p>
+                                <p class="summary">
+                                    <strong>You</strong> keep doing what you're
+                                    doing, and watch audience attention and
+                                    loyalty deepen on your content
+                                </p>
+                            </div>
+                            <div class="hero-image">
+                                <img
+                                    src="assets/image.svg"
+                                    alt="Explainer Image"
+                                    class="explainer-image"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="benefits">
+                            <div class="benefit">
+                                <img
+                                    src="assets/prop-verified.svg"
+                                    class="benefit-icon"
+                                />
+                                <h3>Verified Engagement</h3>
+                                <p>
+                                    Get assurance on the depth of audience
+                                    attention (w/ anti-bot filters)
+                                </p>
+                            </div>
+                            <div class="benefit">
+                                <img
+                                    src="assets/prop-puzzle.svg"
+                                    class="benefit-icon"
+                                />
+                                <h3>Easy to Adopt</h3>
+                                <p>
+                                    Minimal effort to set up, no need to change
+                                    your site
+                                </p>
+                            </div>
+                            <div class="benefit">
+                                <img
+                                    src="assets/prop-automated.svg"
+                                    class="benefit-icon"
+                                />
+                                <h3>Automated Processes</h3>
+                                <p>
+                                    Let us handle the boring stuff for you, so
+                                    you can focus on the actual work
+                                </p>
+                            </div>
+                            <div class="benefit">
+                                <img
+                                    src="assets/prop-free.svg"
+                                    class="benefit-icon"
+                                />
+                                <h3>Free</h3>
+                            </div>
+                        </div>
+
+                        <!-- Position countdown at the fold -->
+                        <div class="fold-bottom-content">
+                            <div
+                                class="countdown countdown-section"
+                                id="countdown"
+                            >
+                                <!-- <p>
+                                    Launch in <span id="days">0</span> Days
+                                    <span id="hours">0</span> Hours
+                                </p>
+                                <p><span id="launch-date"></span></p> -->
+                                <p>Launching soon! Get in the loop.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta">
+                        <!-- <form
+                            class="action"
+                            action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+                            method="POST"
+                        >
+                            <p>Be the first to know:</p>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your email address"
+                                required
+                            />
+                            <button type="submit" class="btn">Notify Me</button>
+                        </form> -->
+                        <div class="action">
+                            <p>Schedule a 30-minute demo</p>
+                            <a
+                                href="https://calendly.com/diginthere-info/30min"
+                                target="_blank"
+                                rel="noopener"
+                                class="btn"
+                                >Book a demo</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="footer">
+                        <div class="footer-email">
+                            Say hi at
+                            <a href="mailto:info@diginthere.com"
+                                >info@diginthere.com</a
+                            >
+                        </div>
+
+                        <a href="https://rjionline.org/" target="_blank">
+                            <img
+                                src="assets/reynolds_journalism_institute_logo.jpeg"
+                                alt="Reynolds Journalism Institute Logo"
+                            />
+                            <span
+                                >Supported by the Reynolds Journalism
+                                Institute</span
+                            >
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <script>
+            // Countdown timer
+            const launchDate = new Date("June 16, 2025 00:00:00");
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = launchDate.getTime() - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(
+                    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+
+                // document.getElementById("days").innerText = days;
+                // document.getElementById("hours").innerText = hours;
+                // document.getElementById("launch-date").innerText =
+                //     launchDate.toLocaleDateString("en-US", {
+                //         month: "long",
+                //         day: "numeric",
+                //         year: "numeric",
+                //     });
+
+                if (distance < 0) {
+                    document.querySelector(".countdown").innerHTML =
+                        "<p>We have launched!</p>";
+                    clearInterval(interval);
+                }
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
     </body>
 </html>
