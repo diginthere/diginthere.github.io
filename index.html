@@ -481,6 +481,12 @@
                 text-decoration: none;
             }
 
+            .fold-bottom-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             /* Mid-size: two benefits per row */
             @media (min-width: 420px) and (max-width: 720px) {
                 :root {
@@ -852,7 +858,10 @@
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
                                     aria-hidden="true"
-                                    style="transform: rotate(-1.5deg)"
+                                    style="
+                                        transform: rotate(-1.5deg);
+                                        margin-top: 10px;
+                                    "
                                 >
                                     <path
                                         d="M12 4v14.5M12 18.5l-7-7M12 18.5l7-7"
