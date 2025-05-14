@@ -54,8 +54,8 @@
                 --background-color: #f9f9f9;
                 --accent-color: #ffca28;
                 --font-family: "Inter", sans-serif;
-                --gap-size: 30px;
-                --section-spacing-mobile: 20px;
+                --gap-size: 25px;
+                --section-spacing-mobile: 10px;
                 --section-spacing-tablet: 20px;
                 --section-spacing-desktop: 40px;
 
@@ -74,6 +74,7 @@
             }
             html {
                 scrollbar-gutter: stable;
+                scroll-behavior: smooth;
             }
             body {
                 font-family: var(--font-family);
@@ -85,7 +86,7 @@
             .container {
                 max-width: 1200px;
                 margin: auto;
-                padding: 20px;
+                padding: 10px;
             }
             header {
                 display: flex;
@@ -258,12 +259,111 @@
                 color: var(--primary-color);
             }
 
+            #countdown {
+                /* kill any leftover dotted-grid backgrounds */
+                background-image: none !important;
+
+                /* your clean line-art frame */
+                background: #fff;
+                padding: 24px 20px;
+                margin: 30px auto;
+                max-width: 420px;
+                position: relative;
+                border: 4px solid var(--primary-color);
+                border-radius: 8px;
+                transform: rotate(-1.5deg);
+                box-shadow: none;
+            }
+
+            /* make the whole box clickable */
+            #countdown {
+                display: block; /* anchors default to inline */
+                text-decoration: none; /* remove underline */
+                color: var(--primary-color);
+                font-weight: 900;
+                cursor: pointer;
+                position: relative;
+
+                /* your existing line-art frame */
+                background: #fff;
+                padding: 24px 20px;
+                margin: 30px auto;
+                max-width: 420px;
+                border: 8px solid var(--primary-color);
+                border-radius: 12px;
+                transform: rotate(-1.5deg);
+                box-shadow: none;
+
+                /* corner accents */
+                background-image: linear-gradient(
+                        var(--primary-color) 4px,
+                        transparent 0
+                    ),
+                    linear-gradient(
+                        90deg,
+                        var(--primary-color) 4px,
+                        transparent 0
+                    ),
+                    linear-gradient(var(--primary-color) 4px, transparent 0),
+                    linear-gradient(
+                        90deg,
+                        var(--primary-color) 4px,
+                        transparent 0
+                    ),
+                    linear-gradient(var(--primary-color) 4px, transparent 0),
+                    linear-gradient(
+                        90deg,
+                        var(--primary-color) 4px,
+                        transparent 0
+                    ),
+                    linear-gradient(var(--primary-color) 4px, transparent 0),
+                    linear-gradient(
+                        90deg,
+                        var(--primary-color) 4px,
+                        transparent 0
+                    );
+                background-repeat: no-repeat;
+                background-size: 4px 20px, 20px 4px, 4px 20px, 20px 4px,
+                    4px 20px, 20px 4px, 4px 20px, 20px 4px;
+                background-position: top left, top left, top right, top right,
+                    bottom right, bottom right, bottom left, bottom left;
+            }
+
+            /* hover feedback to show it's clickable */
+            #countdown:hover {
+                transform: rotate(-1.5deg) scale(1.01);
+            }
+
+            /* ensure your arrow/text still pick up the primary color */
+            #countdown p,
+            #countdown svg {
+                color: var(--primary-color);
+                pointer-events: none; /* so click always hits the <a> */
+            }
+
+            /* link styling */
+            .scroll-link {
+                color: var(--primary-color);
+                text-decoration: none;
+                font-weight: 600;
+                position: relative;
+            }
+            .scroll-link .arrow {
+                display: inline-block;
+                margin-left: 4px;
+                font-size: 0.9em;
+                transition: transform 0.2s ease;
+            }
+            .scroll-link:hover .arrow {
+                transform: translateX(3px);
+            }
+
             /* Default: single-item per row */
             .benefits {
                 display: flex;
                 flex-direction: column;
                 gap: var(--gap-size);
-                font-size: var(--fs-md * 0.9);
+                font-size: calc(var(--fs-md) * 0.9);
                 margin-bottom: var(--section-spacing-mobile);
             }
             .benefit {
@@ -566,6 +666,37 @@
                     margin-bottom: 30px;
                 }
 
+                /* lay the summaries out in one row */
+                .hero-content {
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    gap: 10px; /* optional tweak to control spacing */
+                }
+
+                /* .hero-image {
+                    flex: 1 1 100%;
+                    max-width: 100px;
+                    margin: 0 auto;
+                } */
+                .explainer-image {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 25vh;
+                    object-fit: contain;
+                }
+
+                /* make each summary take up roughly a third of the width */
+                .summary {
+                    flex: 1 1 calc(10% - 10px);
+                    font-size: calc(var(--fs-sm) * 0.75);
+                    padding: 10px;
+                }
+
+                #countdown {
+                    border: 4px solid var(--primary-color);
+                }
+
                 /* Position countdown at the natural mobile fold */
                 .countdown-section {
                     margin-top: 10px;
@@ -636,7 +767,7 @@
                             <div class="hero-content">
                                 <p class="summary">
                                     <strong>We</strong> power your content with
-                                    rewards
+                                    rewards.
                                 </p>
                                 <p class="summary">
                                     <strong>Your readers</strong> get an
@@ -644,8 +775,8 @@
                                 </p>
                                 <p class="summary">
                                     <strong>You</strong> keep doing what you're
-                                    doing, and watch audience attention and
-                                    loyalty deepen on your content
+                                    doing, and watch audience attention deepen
+                                    on your content
                                 </p>
                             </div>
                             <div class="hero-image">
@@ -677,7 +808,7 @@
                                 <h3>Easy to Adopt</h3>
                                 <p>
                                     Minimal effort to set up, no need to change
-                                    your site
+                                    your site or publishing arrangements
                                 </p>
                             </div>
                             <div class="benefit">
@@ -702,20 +833,39 @@
 
                         <!-- Position countdown at the fold -->
                         <div class="fold-bottom-content">
-                            <div
-                                class="countdown countdown-section"
+                            <a
                                 id="countdown"
+                                href="#cta"
+                                class="countdown countdown-section"
                             >
                                 <!-- <p>
                                     Launch in <span id="days">0</span> Days
                                     <span id="hours">0</span> Hours
                                 </p>
                                 <p><span id="launch-date"></span></p> -->
-                                <p>Launching soon! Get in the loop.</p>
-                            </div>
+                                Launching soon! Get in the loop
+                                <svg
+                                    class="down-arrow"
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true"
+                                    style="transform: rotate(-1.5deg)"
+                                >
+                                    <path
+                                        d="M12 4v14.5M12 18.5l-7-7M12 18.5l7-7"
+                                        stroke="currentColor"
+                                        stroke-width="3.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </a>
                         </div>
 
-                        <div class="cta">
+                        <div class="cta" id="cta">
                             <!-- <form
                                 class="action"
                                 action="https://formspree.io/f/YOUR_FORMSPREE_ID"
