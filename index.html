@@ -369,6 +369,11 @@
                 font-size: calc(var(--fs-md) * 0.9);
                 margin-bottom: var(--section-spacing-mobile);
             }
+            .benefits > h1.tagline {
+                flex: 0 0 100%;
+                width: 100%;
+                margin-bottom: var(--gap-size);
+            }
             .benefit {
                 width: 100%;
                 background: #fff;
@@ -569,8 +574,8 @@
                 :root {
                     --fs-xl: 1.75rem;
                     --fs-lg: 1.5rem;
-                    --fs-md: 1rem;
-                    --fs-sm: 0.875rem;
+                    --fs-md: 0.9rem;
+                    --fs-sm: 0.8rem;
                 }
 
                 header {
@@ -630,7 +635,7 @@
                 .page-content .cta {
                     order: 3;
                 }
-                .first-fold-content .benefits {
+                .first-fold-content .benefits-container {
                     order: 4;
                 }
                 .page-content .footer {
@@ -651,7 +656,6 @@
                     flex-direction: row;
                     justify-content: space-between;
                     text-align: left;
-                    margin-bottom: 40px;
                 }
 
                 .fold-bottom-content {
@@ -661,8 +665,6 @@
                 .hero-section {
                     flex-direction: row;
                     align-items: stretch;
-                    min-height: 300px;
-                    margin-bottom: 50px;
                 }
                 .hero-content {
                     width: 40%;
@@ -725,7 +727,7 @@
                 .first-fold-content .hero-section {
                     order: 1;
                 }
-                .first-fold-content .benefits {
+                .first-fold-content .benefits-container {
                     order: 2;
                 }
                 .first-fold-content .fold-bottom-content {
@@ -778,7 +780,7 @@
                 .explainer-image {
                     width: 100%;
                     height: 100%;
-                    max-height: 25vh;
+                    max-height: 33vh;
                     object-fit: contain;
                 }
 
@@ -821,8 +823,9 @@
                 .page-content .cta {
                     order: 3;
                 }
-                .first-fold-content .benefits {
+                .first-fold-content .benefits-container {
                     order: 4;
+                    margin-top: 20px;
                 }
                 .page-content .footer {
                     order: 5;
@@ -890,46 +893,50 @@
                             </div>
                         </div>
 
-                        <div class="benefits">
-                            <div class="benefit">
-                                <img
-                                    src="assets/prop-verified.svg"
-                                    class="benefit-icon"
-                                />
-                                <h3>Verified Engagement</h3>
-                                <p>
-                                    Get assurance on the depth of audience
-                                    attention (w/ anti-bot filters)
-                                </p>
-                            </div>
-                            <div class="benefit">
-                                <img
-                                    src="assets/prop-puzzle.svg"
-                                    class="benefit-icon"
-                                />
-                                <h3>Easy to Adopt</h3>
-                                <p>
-                                    Minimal effort to set up, no need to change
-                                    your site or publishing arrangements
-                                </p>
-                            </div>
-                            <div class="benefit">
-                                <img
-                                    src="assets/prop-automated.svg"
-                                    class="benefit-icon"
-                                />
-                                <h3>Automated Processes</h3>
-                                <p>
-                                    Let us handle the boring stuff for you, so
-                                    you can focus on the actual work
-                                </p>
-                            </div>
-                            <div class="benefit">
-                                <img
-                                    src="assets/prop-free.svg"
-                                    class="benefit-icon"
-                                />
-                                <h3>Free</h3>
+                        <div class="benefits-container">
+                            <h1 class="tagline">Why You'll Love This</h1>
+                            <div class="benefits">
+                                <div class="benefit">
+                                    <img
+                                        src="assets/prop-verified.svg"
+                                        class="benefit-icon"
+                                    />
+                                    <h3>Verified Engagement</h3>
+                                    <p>
+                                        Get assurance on the depth of audience
+                                        attention (w/ anti-bot filters)
+                                    </p>
+                                </div>
+                                <div class="benefit">
+                                    <img
+                                        src="assets/prop-puzzle.svg"
+                                        class="benefit-icon"
+                                    />
+                                    <h3>Easy to Adopt</h3>
+                                    <p>
+                                        Minimal effort to set up, no need to
+                                        change your site or publishing
+                                        arrangements
+                                    </p>
+                                </div>
+                                <div class="benefit">
+                                    <img
+                                        src="assets/prop-automated.svg"
+                                        class="benefit-icon"
+                                    />
+                                    <h3>Automated Processes</h3>
+                                    <p>
+                                        Let us handle the boring stuff for you,
+                                        so you can focus on the actual work
+                                    </p>
+                                </div>
+                                <div class="benefit">
+                                    <img
+                                        src="assets/prop-free.svg"
+                                        class="benefit-icon"
+                                    />
+                                    <h3>Free</h3>
+                                </div>
                             </div>
                         </div>
 
