@@ -1,2 +1,6 @@
 assets/others/
-archive/
+assets/archive/
+functions/
+.firebaserc
+firebase.json
+firebase-debug.log

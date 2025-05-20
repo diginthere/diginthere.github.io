@@ -247,6 +247,8 @@
                 font-size: var(--fs-lg);
                 margin-bottom: var(--section-spacing-mobile);
                 background: white;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
                 padding: 25px;
                 border-radius: 12px;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -255,7 +257,7 @@
             }
 
             #countdown span {
-                font-weight: 700;
+                font-weight: 900;
                 color: var(--primary-color);
             }
 
@@ -332,7 +334,7 @@
 
             /* hover feedback to show it's clickable */
             #countdown:hover {
-                transform: rotate(-4deg) scale(1.01);
+                transform: rotate(-4deg) scale(1.015);
             }
 
             /* ensure your arrow/text still pick up the primary color */
@@ -482,23 +484,34 @@
                 text-decoration: none;
             }
 
-            /* make fold-bottom-content collapsible */
             .fold-bottom-content {
-                padding-left: 10px;
-                padding-right: 10px;
-                overflow: hidden;
-                /* pick a max-height taller than your content */
-                max-height: 500px;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                white-space: nowrap;
+                gap: 0.4em;
+                padding: 0 10px;
+
+                /* --- remove these from the open state --- */
+                /* overflow: hidden; */
+                /* max-height: 500px; */
+                /* opacity: 1; */
+
+                /* so the container just wraps its content: */
+                overflow: visible;
+                max-height: none;
                 opacity: 1;
+
                 transition: max-height 0.5s ease, opacity 0.5s ease,
                     margin-bottom 0.5s ease;
             }
 
-            /* collapsed state */
+            /* only when we add .collapsed do we clamp it down and hide it */
             .fold-bottom-content.collapsed {
+                overflow: hidden;
                 max-height: 0;
                 opacity: 0;
-                margin-bottom: 0; /* remove its gap */
+                margin-bottom: 0;
             }
 
             /* allow CTA to animate its border */
@@ -536,6 +549,18 @@
             .notify-controls .btn {
                 white-space: nowrap; /* prevent button text wrapping */
                 margin-bottom: 0; /* align baseline with the input */
+            }
+
+            .response-message {
+                margin-top: 12px;
+                font-size: var(--fs-md);
+                color: var(--primary-color);
+                min-height: 1.2em; /* reserve space even when empty */
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            .response-message.visible {
+                opacity: 1;
             }
 
             /* Mid-size: two benefits per row */
@@ -759,12 +784,12 @@
                 /* make each summary take up roughly a third of the width */
                 .summary {
                     flex: 1 1 calc(10% - 10px);
-                    font-size: calc(var(--fs-sm) * 0.75);
+                    font-size: calc(var(--fs-sm) * 0.9);
                     padding: 10px;
                 }
 
                 #countdown {
-                    border: 4px solid var(--primary-color);
+                    border: 6px solid var(--primary-color);
                 }
 
                 .cta.with-border {
@@ -803,6 +828,8 @@
                 }
             }
         </style>
+
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcwL0ErAAAAAIdroWNVfq2B_K3b4B77A-roiyHp"></script>
     </head>
     <body>
         <div class="container">
@@ -918,10 +945,10 @@
                                 </p>
                                 <p><span id="launch-date"></span></p> -->
 
-                                Launching soon! Get in the loop
+                                <span>Launching soon</span>
                                 <svg
-                                    width="28"
-                                    height="28"
+                                    width="24"
+                                    height="24"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -940,24 +967,37 @@
                         </div>
 
                         <div class="cta" id="cta">
-                            <form
-                                class="action notify-form"
-                                action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-                                method="POST"
-                            >
+                            <form id="emailForm" class="action notify-form">
                                 <p>Be the first to know:</p>
+
                                 <div class="notify-controls">
                                     <input
+                                        id="email"
                                         type="email"
                                         name="email"
-                                        placeholder="Your email address"
+                                        placeholder="Your email"
                                         required
                                     />
+
+                                    <input
+                                        type="hidden"
+                                        name="recaptcha_token"
+                                        id="recaptchaToken"
+                                    />
+
                                     <button type="submit" class="btn">
                                         Notify Me
                                     </button>
+
+                                    <div
+                                        id="responseMsg"
+                                        class="response-message"
+                                        role="alert"
+                                        aria-live="polite"
+                                    ></div>
                                 </div>
                             </form>
+
                             <div class="action">
                                 <p>Schedule a 30-minute demo</p>
                                 <a
@@ -1062,6 +1102,64 @@
                         top: cta.offsetTop,
                         behavior: "smooth",
                     });
+                });
+            });
+        </script>
+
+        <script>
+            const form = document.getElementById("emailForm");
+            const responseMsg = document.getElementById("responseMsg");
+            const SITE_KEY = "6LcwL0ErAAAAAIdroWNVfq2B_K3b4B77A-roiyHp";
+            const API_ENDPOINT =
+                "https://api-yjy6ze6diq-uc.a.run.app/api/signup";
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // get the email value
+                const email = form.email.value;
+
+                // run reCAPTCHA
+                grecaptcha.ready(function () {
+                    grecaptcha
+                        .execute(SITE_KEY, { action: "submit_form" })
+                        .then(function (token) {
+                            // now package up your payload
+                            const payload = {
+                                email: email,
+                                recaptcha_token: token,
+                            };
+
+                            // POST it where you want
+                            fetch(API_ENDPOINT, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(payload),
+                            })
+                                .then((resp) => resp.json())
+                                .then((data) => {
+                                    responseMsg.textContent =
+                                        data.message ||
+                                        "Thanks! We'll let you know.";
+                                    responseMsg.classList.add("visible");
+                                    form.reset();
+                                })
+                                .catch((err) => {
+                                    // handle any network / parse errors
+                                    console.error(err);
+                                    responseMsg.textContent =
+                                        "Oops! Something went wrong.";
+                                    responseMsg.classList.add("visible");
+                                });
+                        })
+                        .catch(function (err) {
+                            console.error("reCAPTCHA failed:", err);
+                            responseMsg.textContent =
+                                "reCAPTCHA error, please try again.";
+                            responseMsg.classList.add("visible");
+                        });
                 });
             });
         </script>
